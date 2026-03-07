@@ -1,0 +1,19 @@
+[user]
+	name = Vladimir Kidyaev
+	email = krios2146@gmail.com
+[core]
+	editor = nvim
+	autocrlf = input
+[alias]
+  pudge = push
+[init]
+	defaultBranch = master
+[pull]
+	rebase = true
+[push]
+	autoSetupRemote = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
