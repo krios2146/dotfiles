@@ -27,3 +27,5 @@ source $ZSH/oh-my-zsh.sh
 #
 
 source ~/.local/share/omarchy/default/bash/aliases
+
+eval "$(zoxide init zsh)"
