@@ -65,4 +65,11 @@ return {
     main = 'ibl',
     opts = { enabled = false, scope = { show_start = false, show_end = false } },
   },
+  -- {
+  --   'xiyaowong/transparent.nvim',
+  --   -- config = function()
+  --   --   require('transparent').clear_prefix 'lualine'
+  --   -- end,
+  -- },
+  { 'EskelinenAntti/omarchy-theme-loader.nvim' },
 }

@@ -1,3 +1,19 @@
+vim.api.nvim_create_autocmd({ 'ColorScheme', 'VimEnter' }, {
+  group = vim.api.nvim_create_augroup('transparent-lualine', { clear = true }),
+  callback = function()
+    for _, mode in ipairs { 'normal', 'insert', 'visual', 'command', 'replace' } do
+      vim.api.nvim_set_hl(0, 'lualine_c_' .. mode, { link = 'lualine_transparent' })
+    end
+  end,
+})
+
+vim.api.nvim_create_autocmd('TextYankPost', {
+  group = vim.api.nvim_create_augroup('highlight-on-yank', { clear = true }),
+  callback = function()
+    vim.hl.on_yank()
+  end,
+})
+
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('lsp-highlight', { clear = true }),
   callback = function(event)

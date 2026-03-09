@@ -6,14 +6,6 @@ vim.g.have_nerd_font = true
 require 'opts'
 require 'keymaps_default'
 
-vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight on yank',
-  group = vim.api.nvim_create_augroup('highlight-on-yank', { clear = true }),
-  callback = function()
-    vim.hl.on_yank()
-  end,
-})
-
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   vim.fn.system {
