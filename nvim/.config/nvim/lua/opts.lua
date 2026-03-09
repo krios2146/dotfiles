@@ -1,6 +1,7 @@
 -- Relative line setup
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.fillchars = { eob = ' ' }
 
 -- Set default tab to 4 for every language
 vim.o.shiftwidth = 4

@@ -1,5 +1,28 @@
 local trouble = require 'trouble'
 local builtin = require 'telescope.builtin'
+local neotree = require 'neo-tree.command'
+
+local function current_file_or_dir()
+  local reveal_file = vim.fn.expand '%:p'
+  if reveal_file == '' then
+    reveal_file = vim.fn.getcwd()
+  else
+    local f = io.open(reveal_file, 'r')
+    if f then
+      f.close(f)
+    else
+      reveal_file = vim.fn.getcwd()
+    end
+  end
+  return reveal_file
+end
+
+local function open_neotree_at_current_file_or_dir()
+  neotree.execute {
+    reveal_file = current_file_or_dir(),
+    reveal_force_cwd = true,
+  }
+end
 
 local function builtin_grep_open_files()
   builtin.live_grep { grep_open_files = true, prompt_title = 'Live Grep in Open Files' }
@@ -81,4 +104,6 @@ map_lsp('<leader>dh', vim.lsp.buf.document_highlight, '[D]ocument [H]ighlight')
 
 vim.keymap.set('i', '<C-s>', vim.lsp.buf.signature_help, { desc = 'LSP: Signature [H]elp' })
 
-vim.keymap.set('n', '<leader>pv', vim.cmd.NvimTreeOpen, { desc = '[P]roject [V]iew' })
+vim.keymap.set('n', '<leader>pv', vim.cmd.Neotree, { desc = '[P]roject [V]iew' })
+
+vim.keymap.set('n', '<leader>pv', open_neotree_at_current_file_or_dir, { desc = 'Open neo-tree at current file or working directory' })

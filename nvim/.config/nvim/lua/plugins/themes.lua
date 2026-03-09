@@ -1,9 +1,6 @@
 return {
-  { 'folke/tokyonight.nvim' },
   { 'marko-cerovac/material.nvim' },
   { 'ray-x/aurora' },
-  { 'rebelot/kanagawa.nvim' },
-  { 'catppuccin/nvim', name = 'catppuccin' },
   {
     'Shatur/neovim-ayu',
     config = function()
@@ -19,6 +16,5 @@ return {
     end,
   },
   { 'nanotech/jellybeans.vim' },
-  { 'rose-pine/neovim', name = 'rose-pine' },
   { 'krios2146/1984.nvim' },
 }

@@ -9,16 +9,6 @@ return {
   { 'folke/which-key.nvim', event = 'VeryLazy' },
   { 'stevearc/dressing.nvim', opts = {} },
   {
-    'nvim-tree/nvim-tree.lua',
-    lazy = false,
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    opts = {
-      actions = {
-        open_file = { quit_on_open = true },
-      },
-    },
-  },
-  {
     'WhoIsSethDaniel/mason-tool-installer.nvim',
     opts = {
       integrations = {
@@ -65,11 +55,12 @@ return {
     main = 'ibl',
     opts = { enabled = false, scope = { show_start = false, show_end = false } },
   },
-  -- {
-  --   'xiyaowong/transparent.nvim',
-  --   -- config = function()
-  --   --   require('transparent').clear_prefix 'lualine'
-  --   -- end,
-  -- },
-  { 'EskelinenAntti/omarchy-theme-loader.nvim' },
+  {
+    'EskelinenAntti/omarchy-theme-loader.nvim',
+    opts = {
+      themes = {
+        ['tokyoled'] = { colorscheme = 'tokyonight' },
+      },
+    },
+  },
 }
