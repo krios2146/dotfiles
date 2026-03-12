@@ -6,7 +6,7 @@
   "height": 30,
   "modules-left": [ "hyprland/workspaces" ],
   "modules-center": [ "clock", "custom/update" ],
-  "modules-right": [ "tray", "bluetooth", "pulseaudio", "network", "hyprland/language" ],
+  "modules-right": [ "custom/weather",  "tray", "bluetooth", "pulseaudio", "network", "hyprland/language" ],
   "hyprland/workspaces": {
     "persistent-only": true,
     "on-click": "activate",
@@ -23,7 +23,7 @@
   },
   "clock": {
     "interval": 1,
-    "format": "<b>{:%B %d %T}</b>",
+    "format": "<b>{:%b %d ⏐ %T ⏐ %a}</b>",
     "tooltip-format": "<big>{calendar}</big>",
     "locale": "en_GB.UTF-8",
     "calendar": {
@@ -39,6 +39,13 @@
       "on-scroll-up": "shift_up",
       "on-scroll-down": "shift_down"
     }
+  },
+  "custom/weather": {
+    "format": "{}°",
+    "tooltip": true,
+    "interval": 3600,
+    "exec": "wttrbar --location Krasnoyarsk --nerd",
+    "return-type": "json"
   },
   "custom/update": {
     "format": "",
