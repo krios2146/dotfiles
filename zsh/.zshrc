@@ -26,6 +26,10 @@ source $ZSH/oh-my-zsh.sh
 # zsh configuration
 #
 
+export GOPATH="$HOME"/.local/share/go
+export PATH="$PATH:$(go env GOPATH)/bin"
+
 source ~/.local/share/omarchy/default/bash/aliases
 
 eval "$(zoxide init zsh)"
+eval "$(mise activate zsh)"
