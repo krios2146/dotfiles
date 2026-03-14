@@ -68,6 +68,8 @@ local configs = {
   ruby_lsp = {},
 
   gleam = {},
+
+  kotlin_lsp = {},
 }
 
 local language_tools = {

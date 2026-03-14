@@ -1,7 +1,7 @@
 ---@diagnostic disable: undefined-global
 return {
   s(
-    'ifer',
+    'iferr',
     fmt(
       [[
 if err != nil {{

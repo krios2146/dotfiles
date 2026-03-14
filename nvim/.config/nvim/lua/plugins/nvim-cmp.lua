@@ -10,11 +10,16 @@ return {
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-buffer',
       'onsails/lspkind.nvim',
+      'supermaven-inc/supermaven-nvim',
     },
     config = function()
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
       local lspkind = require 'lspkind'
+      require('supermaven-nvim').setup {
+        disable_inline_completion = true,
+        disable_keymaps = true,
+      }
 
       local luasnip_jump_forward = function()
         if luasnip.expand_or_locally_jumpable() then
@@ -49,7 +54,11 @@ return {
             luasnip.lsp_expand(args.body)
           end,
         },
-        completion = { completeopt = 'menu,menuone,noinsert' },
+        completion = {
+          completeopt = 'menu,menuone,noinsert',
+          keyword_pattern = [[\k\+]],
+          keyword_length = 0,
+        },
         mapping = cmp.mapping.preset.insert {
           ['<C-n>'] = cmp.mapping.select_next_item(),
           ['<C-p>'] = cmp.mapping.select_prev_item(),
@@ -65,20 +74,20 @@ return {
         sources = {
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
-          { name = 'path' },
-          { name = 'buffer' },
+          { name = 'supermaven', keyword_length = 0 },
+          { name = 'path', keyword_length = 0 },
+          { name = 'buffer', keyword_length = 0 },
         },
         ---@diagnostic disable-next-line: missing-fields
         formatting = {
           format = lspkind.cmp_format {
             mode = 'symbol_text',
             menu = {
-              buffer = '[Buffer]',
-              path = '[Path]',
               nvim_lsp = '[LSP]',
               luasnip = '[LuaSnip]',
-              nvim_lua = '[Lua]',
-              latex_symbols = '[Latex]',
+              supermaven = '[LLM]',
+              path = '[Path]',
+              buffer = '[Buffer]',
             },
           },
         },
