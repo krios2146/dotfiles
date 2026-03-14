@@ -43,6 +43,16 @@
   color: red;
 }
 
+#custom-singbox.low {
+  color: green;
+}
+#custom-singbox.bad {
+  color: yellow;
+}
+#custom-singbox.unknown {
+  color: red;
+}
+
 tooltip {
   padding: 0.1em;
 }

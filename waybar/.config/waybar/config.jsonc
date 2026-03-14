@@ -4,9 +4,9 @@
   "position": "top",
   "spacing": 0,
   "height": 30,
-  "modules-left": [ "hyprland/workspaces" ],
+  "modules-left": [ "hyprland/workspaces", "tray"],
   "modules-center": [ "clock", "custom/update" ],
-  "modules-right": [ "custom/weather",  "tray", "bluetooth", "pulseaudio", "network", "hyprland/language" ],
+  "modules-right": [ "custom/weather", "bluetooth", "pulseaudio", "network", "custom/singbox", "hyprland/language" ],
   "hyprland/workspaces": {
     "persistent-only": true,
     "on-click": "activate",
@@ -40,13 +40,6 @@
       "on-scroll-down": "shift_down"
     }
   },
-  "custom/weather": {
-    "format": "{}°",
-    "tooltip": true,
-    "interval": 3600,
-    "exec": "wttrbar --location Krasnoyarsk --nerd",
-    "return-type": "json"
-  },
   "custom/update": {
     "format": "",
     "exec": "omarchy-update-available",
@@ -55,12 +48,22 @@
     "signal": 7,
     "interval": 21600
   },
-  "network": {
-    "format-ethernet": "󰀂",
-    "format-disconnected": "󰤮  Disconnected",
-    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-    "interval": 1,
-    "spacing": 1,
+  "custom/singbox": {
+    "exec": "cat /tmp/sing-box.json",
+    "return-type": "json",
+    "interval": 3,
+    "format": "{text}",
+  },
+  "custom/weather": {
+    "format": "{}°",
+    "tooltip": true,
+    "interval": 3600,
+    "exec": "wttrbar --location Krasnoyarsk --nerd",
+    "return-type": "json"
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 17
   },
   "bluetooth": {
     "format": " {status}",
@@ -84,9 +87,12 @@
       "default": ["", "", ""]
     }
   },
-  "tray": {
-    "icon-size": 16,
-    "spacing": 17
+  "network": {
+    "format-ethernet": "󰀂",
+    "format-disconnected": "󰤮  Disconnected",
+    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "interval": 1,
+    "spacing": 1,
   },
   "hyprland/language": {
       "format-en": "EN",
