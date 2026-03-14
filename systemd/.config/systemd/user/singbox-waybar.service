@@ -1,0 +1,9 @@
+[Unit]
+Description=Singbox Waybar Service
+
+[Service]
+ExecStart=/home/krios2146/.config/waybar/sing-box.sh
+Restart=always
+
+[Install]
+WantedBy=default.target
