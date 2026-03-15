@@ -6,7 +6,7 @@
   "height": 30,
   "modules-left": [ "hyprland/workspaces", "tray"],
   "modules-center": [ "clock", "custom/update" ],
-  "modules-right": [ "custom/weather", "bluetooth", "pulseaudio", "network", "custom/singbox", "hyprland/language" ],
+  "modules-right": [ "custom/weather", "bluetooth", "pulseaudio", "custom/network", "custom/singbox", "hyprland/language" ],
   "hyprland/workspaces": {
     "persistent-only": true,
     "on-click": "activate",
@@ -87,12 +87,10 @@
       "default": ["", "", ""]
     }
   },
-  "network": {
-    "format-ethernet": "󰀂",
-    "format-disconnected": "󰤮  Disconnected",
-    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-    "interval": 1,
-    "spacing": 1,
+  "custom/network": {
+    "exec": "cat /tmp/network-check.json",
+    "return-type": "json",
+    "interval": 5,
   },
   "hyprland/language": {
       "format-en": "EN",

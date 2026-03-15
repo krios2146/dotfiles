@@ -51,8 +51,15 @@
 }
 #custom-singbox.unknown {
   color: red;
+  font-weight: bold;
+}
+
+#custom-network.disconnected {
+  color: red;
+  font-weight: bold;
 }
 
 tooltip {
   padding: 0.1em;
+  border: 1px solid @foreground;
 }

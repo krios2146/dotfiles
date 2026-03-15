@@ -45,9 +45,9 @@ while true; do
     fi
 
     tooltip="Name: $name
-    Type: $type
-    Delay: ${delay:-unknown}ms
-    UDP: $udp"
+Type: $type
+Delay: ${delay:-unknown}ms
+UDP: $udp"
 
     result=$(jq -cn --unbuffered --arg text "$text" --arg tooltip "$tooltip" --arg class "$css_class" \
         '{
