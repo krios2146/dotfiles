@@ -1,9 +1,11 @@
 vim.api.nvim_create_autocmd({ 'ColorScheme', 'VimEnter' }, {
   group = vim.api.nvim_create_augroup('transparent-lualine', { clear = true }),
   callback = function()
-    for _, mode in ipairs { 'normal', 'insert', 'visual', 'command', 'replace' } do
+    for _, mode in ipairs { 'normal', 'insert', 'visual', 'command', 'replace', 'inactive' } do
       vim.api.nvim_set_hl(0, 'lualine_c_' .. mode, { bg = 'NONE', ctermbg = 'NONE', blend = 100 })
     end
+    vim.api.nvim_set_hl(0, 'StatusLine', { bg = 'NONE', ctermbg = 'NONE', blend = 100 })
+    vim.api.nvim_set_hl(0, 'lualine_transparent', { bg = 'NONE', ctermbg = 'NONE', blend = 100 })
   end,
 })
 

@@ -18,11 +18,18 @@ return {
         },
       },
       filesystem = {
+        filtered_items = {
+          hide_dotfiles = false,
+        },
+        hijack_netrw_behavior = 'open_default',
         follow_current_file = { enabled = true },
       },
       default_component_configs = {
         name = {
           use_git_status_colors = false,
+        },
+        last_modified = {
+          format = '%Y-%m-%d %H:%M',
         },
         git_status = {
           symbols = {
@@ -48,21 +55,45 @@ return {
         {
           event = 'neo_tree_buffer_enter',
           handler = function()
-            _G._cursor_hl_backup = vim.api.nvim_get_hl(0, { name = 'Cursor' })
-            vim.cmd 'highlight! CursorIM blend=100'
-            vim.cmd 'highlight! Cursor blend=100'
+            _G._cursor_backup = vim.o.guicursor
+            vim.api.nvim_set_hl(0, 'noCursor', { blend = 100, strikethrough = true })
+            vim.opt.guicursor = 'a:noCursor'
           end,
         },
         {
           event = 'neo_tree_buffer_leave',
           handler = function()
-            if _G._cursor_hl_backup then
-              vim.api.nvim_set_hl(0, 'CursorIM', { blend = 0 })
-              vim.api.nvim_set_hl(0, 'Cursor', { blend = 0 })
+            if _G._cursor_backup then
+              vim.o.guicursor = _G._cursor_backup
             end
+          end,
+        },
+        {
+          event = 'neo_tree_window_after_open',
+          handler = function()
+            if _G._neo_tree_initial_closed == true then
+              return
+            end
+            _G._neo_tree_initial_closed = true
+
+            vim.schedule(function()
+              for _, win in ipairs(vim.api.nvim_list_wins()) do
+                local buf = vim.api.nvim_win_get_buf(win)
+                local ft = vim.bo[buf].filetype
+                if ft ~= 'neo-tree' then
+                  vim.api.nvim_win_close(win, true)
+                end
+              end
+            end)
           end,
         },
       },
     },
+    config = function(_, opts)
+      require('neo-tree').setup(opts)
+      vim.api.nvim_set_hl(0, 'NeoTreeDotfile', { link = 'NeoTreeDimText' })
+      vim.api.nvim_set_hl(0, 'NeoTreeFileStats', { link = 'NeoTreeFileName' })
+      vim.api.nvim_set_hl(0, 'NeoTreeFileStatsHeader', { link = 'NeoTreeFileName', bold = true })
+    end,
   },
 }

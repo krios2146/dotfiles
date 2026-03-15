@@ -9,6 +9,12 @@ return {
   { 'folke/which-key.nvim', event = 'VeryLazy' },
   { 'stevearc/dressing.nvim', opts = {} },
   {
+    'lewis6991/gitsigns.nvim',
+    opts = {
+      attach_to_untracked = true,
+    },
+  },
+  {
     'WhoIsSethDaniel/mason-tool-installer.nvim',
     opts = {
       integrations = {

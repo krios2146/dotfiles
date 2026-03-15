@@ -20,8 +20,6 @@ return {
           lint.try_lint()
         end,
       })
-
-      vim.keymap.set('n', '<leader>dl', lint.try_lint, { desc = '[D]ocument [L]int' })
     end,
   },
 }

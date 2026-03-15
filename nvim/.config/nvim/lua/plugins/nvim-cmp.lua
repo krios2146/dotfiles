@@ -65,7 +65,7 @@ return {
           ['<C-u>'] = cmp.mapping.scroll_docs(-4),
           ['<C-d>'] = cmp.mapping.scroll_docs(4),
           ['<Enter>'] = cmp.mapping.confirm { select = true },
-          ['<C-Space>'] = cmp.mapping.complete {},
+          -- ['<C-Space>'] = cmp.mapping.complete {},
           ['<C-l>'] = cmp.mapping(luasnip_jump_forward, { 'i', 's' }),
           ['<C-h>'] = cmp.mapping(luasnip_jump_back, { 'i', 's' }),
           ['<C-k>'] = cmp.mapping(luasnip_choice_next, { 'i', 's' }),
@@ -74,9 +74,9 @@ return {
         sources = {
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
-          { name = 'supermaven', keyword_length = 0 },
-          { name = 'path', keyword_length = 0 },
-          { name = 'buffer', keyword_length = 0 },
+          { name = 'supermaven' },
+          { name = 'path' },
+          { name = 'buffer' },
         },
         ---@diagnostic disable-next-line: missing-fields
         formatting = {
