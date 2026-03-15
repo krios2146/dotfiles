@@ -1,0 +1,9 @@
+[Unit]
+Description=Network Check Waybar Service
+
+[Service]
+ExecStart=/home/krios2146/.config/waybar/network-check.sh
+Restart=always
+
+[Install]
+WantedBy=default.target
