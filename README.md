@@ -1,17 +1,25 @@
-# dotfiles/nvim/.config/nvim
+# dotfiles
+
+[![wakatime](https://wakatime.com/badge/user/465e62bb-2db9-4043-9075-8cefadda6d94/project/55460503-3b88-45cb-8842-121995123939.svg?style=for-the-badge)](https://wakatime.com/badge/user/465e62bb-2db9-4043-9075-8cefadda6d94/project/55460503-3b88-45cb-8842-121995123939)
+
+Dotfiles for [<img align="top" src="https://img.shields.io/badge/Omarchy-_?style=for-the-badge&logo=omarchy&color=rgb(0%200%200%20%2F%200%25)" />](https://omarchy.org/) managed by [<img align="top" src="https://img.shields.io/badge/GNU Stow-_?style=for-the-badge&logo=gnu&color=rgb(0%200%200%20%2F%200%25)" />](https://www.gnu.org/software/stow/)  
+
+```sh
+stow -t ~ */
+```
+
+## nvim
 
 <a href="https://dotfyle.com/krios2146/dotfiles-nvim-config-nvim"><img src="https://dotfyle.com/krios2146/dotfiles-nvim-config-nvim/badges/plugins?style=for-the-badge" /></a>
 <a href="https://dotfyle.com/krios2146/dotfiles-nvim-config-nvim"><img src="https://dotfyle.com/krios2146/dotfiles-nvim-config-nvim/badges/leaderkey?style=for-the-badge" /></a>
 <a href="https://dotfyle.com/krios2146/dotfiles-nvim-config-nvim"><img src="https://dotfyle.com/krios2146/dotfiles-nvim-config-nvim/badges/plugin-manager?style=for-the-badge" /></a>
 
-[![wakatime](https://wakatime.com/badge/user/465e62bb-2db9-4043-9075-8cefadda6d94/project/55460503-3b88-45cb-8842-121995123939.svg?style=for-the-badge)](https://wakatime.com/badge/user/465e62bb-2db9-4043-9075-8cefadda6d94/project/55460503-3b88-45cb-8842-121995123939)
+### Plugins
 
-## Plugins
-
-### AI
+#### AI
 - [supermaven-inc/supermaven-nvim](https://github.com/supermaven-inc/supermaven-nvim) - The official Neovim plugin for Supermaven
 
-### Colorscheme
+#### Colorscheme
 - [catppuccin/nvim](https://github.com/catppuccin/nvim) - 🍨 Soothing pastel theme for (Neo)vim
 - [ellisonleao/gruvbox.nvim](https://github.com/ellisonleao/gruvbox.nvim) - **_`[TS][LSP][L/D][Lua]`_** Gruvbox community colorscheme Lua port.
 - [folke/tokyonight.nvim](https://github.com/folke/tokyonight.nvim) - **_`[TS][LSP][L/D][Lua]`_** A clean, dark and light theme written in Lua, with support for LSP, Tree-sitter and lots of plugins.
@@ -24,96 +32,96 @@
 - [shaunsingh/nord.nvim](https://github.com/shaunsingh/nord.nvim) - Neovim theme based off of the Nord Color Palette, written in lua with tree sitter support
 - [xero/miasma.nvim](https://github.com/xero/miasma.nvim) - **_`[TS][LSP]`_** A dark pastel color scheme inspired by the woods. Built using lush and supports Tree-sitter, diagnostics, CMP, Git-Signs, Telescope, Which-key, Lazy, and more.
 
-### Colorscheme Creation
+#### Colorscheme Creation
 - [rktjmp/lush.nvim](https://github.com/rktjmp/lush.nvim) - Define Neovim themes as a DSL in Lua, with real-time feedback.
 
-### Comment
+#### Comment
 - [folke/todo-comments.nvim](https://github.com/folke/todo-comments.nvim) - Highlight, list and search TODO comments in your projects.
 - [numToStr/Comment.nvim](https://github.com/numToStr/Comment.nvim) - Smart and powerful comment plugin. Supports commentstring, motions, dot-repeat and more.
 
-### Completion
+#### Completion
 - [hrsh7th/cmp-buffer](https://github.com/hrsh7th/cmp-buffer) - `nvim-cmp` source for buffer words.
 - [hrsh7th/cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp) - `nvim-cmp` source for the built-in LSP client.
 - [hrsh7th/cmp-path](https://github.com/hrsh7th/cmp-path) - `nvim-cmp` source for filesystem paths.
 - [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp) - Completion engine written in Lua, successor of `nvim-compe`.
 - [saadparwaiz1/cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip) - `nvim-cmp` source for `LuaSnip`.
 
-### Debugging
+#### Debugging
 - [mfussenegger/nvim-dap](https://github.com/mfussenegger/nvim-dap) - Debug Adapter Protocol client implementation.
 - [rcarriga/nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui) - A UI for nvim-dap.
 - [theHamsta/nvim-dap-virtual-text](https://github.com/theHamsta/nvim-dap-virtual-text) - Virtual text support for nvim-dap.
 
-### Diagnostics
+#### Diagnostics
 - [folke/trouble.nvim](https://github.com/folke/trouble.nvim) - A pretty diagnostics list to help you solve all the trouble your code is causing.
 
-### Editing Support
+#### Editing Support
 - [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs) - A minimalist autopairs written by Lua.
 - [windwp/nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag) - Use Tree-sitter to autoclose and autorename XML, HTML, JSX tag.
 
-### File Explorer
+#### File Explorer
 - [nvim-neo-tree/neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim) - Browse the file system and other tree-like structures in whatever style suits you, including sidebars, floating windows, `netrw` split style, or all of them at once.
 
-### Formatting
+#### Formatting
 - [stevearc/conform.nvim](https://github.com/stevearc/conform.nvim) - A lightweight formatting engine that plays nice with LSP.
 
-### Fuzzy Finder
+#### Fuzzy Finder
 - [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) - Telescope.nvim is a highly [extendable](https://github.com/nvim-telescope/telescope.nvim/wiki/Extensions) A highly extensible fuzzy finder over lists.
 
-### Git
+#### Git
 - [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) - Git integration: signs, hunk actions, blame, etc.
 
-### Icon
+#### Icon
 - [nvim-tree/nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons) - A Lua fork of [vim-devicons](https://github.com/ryanoasis/vim-devicons).
 
-### Indent
+#### Indent
 - [lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) - IndentLine replacement in Lua with more features and Tree-sitter support.
 
-### Keybinding
+#### Keybinding
 - [folke/which-key.nvim](https://github.com/folke/which-key.nvim) - Shows a popup with possible keybindings of the command you started typing.
 
-### LSP
+#### LSP
 - [j-hui/fidget.nvim](https://github.com/j-hui/fidget.nvim) - Standalone UI for LSP progress.
 - [mason-org/mason-lspconfig.nvim](https://github.com/mason-org/mason-lspconfig.nvim) - Extension to mason.nvim that makes it easier to use lspconfig with mason.nvim.
 - [mfussenegger/nvim-lint](https://github.com/mfussenegger/nvim-lint) - An asynchronous linter plugin, complementary to the built-in Language Server Protocol support.
 - [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - Quickstart configurations for the LSP client.
 - [onsails/lspkind.nvim](https://github.com/onsails/lspkind.nvim) - The plugin adds VSCode-like icons to LSP completions.
 
-### LSP Installer
+#### LSP Installer
 - [mason-org/mason.nvim](https://github.com/mason-org/mason.nvim) - Portable package manager that runs everywhere Neovim runs. Easily install and manage LSP servers, DAP servers, linters, and formatters.
 
-### Neovim Lua Development
+#### Neovim Lua Development
 - [MunifTanjim/nui.nvim](https://github.com/MunifTanjim/nui.nvim) - UI Component Library.
 - [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim) - Plenary: full; complete; entire; absolute; unqualified. All the Lua functions I don't want to write twice.
 
-### Snippet
+#### Snippet
 - [L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip) - A snippet engine written in Lua.
 - [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets) - Set of preconfigured snippets for different languages.
 
-### Statusline
+#### Statusline
 - [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) - Easily configurable, blazingly fast statusline.
 
-### Syntax
+#### Syntax
 - [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - Tree-sitter configurations and abstraction layer.
 
-### UI
+#### UI
 - [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify) - A fancy, configurable, notification manager.
 
-### Uncategorised
+#### Uncategorised
 - [WhoIsSethDaniel/mason-tool-installer.nvim](https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim) - Install and upgrade third party tools automatically
 - [loctvl842/monokai-pro.nvim](https://github.com/loctvl842/monokai-pro.nvim) - Monokai Pro theme for Neovim written in Lua, with multiple filters: Pro, Classic, Machine, Octagon, Ristretto, Spectrum
 - [tahayvr/matteblack.nvim](https://github.com/tahayvr/matteblack.nvim) - A low distraction dark theme for NeoVim.
 - [wakatime/vim-wakatime](https://github.com/wakatime/vim-wakatime) - Vim plugin for automatic time tracking and metrics generated from your programming activity.
 
-### Utility
+#### Utility
 - [echasnovski/mini.nvim](https://github.com/echasnovski/mini.nvim) - Library of 40+ independent Lua modules improving overall Neovim (version 0.9 and higher) experience with minimal effort
 - [stevearc/dressing.nvim](https://github.com/stevearc/dressing.nvim) - Neovim plugin to improve the default vim.ui interfaces
 
-## Editor Tools
+### Editor Tools
 
-### DAP
+#### DAP
 - [delve](https://github.com/go-delve/delve) - Delve is a debugger for the Go programming language. <img align="top" src="https://img.shields.io/badge/Go-_?style=for-the-badge&logo=Go&color=rgb(0%200%200%20%2F%200%25)" />
 
-### Formatter
+#### Formatter
 - [black](https://pypi.org/project/black/) - Black, the uncompromising Python code formatter. <img align="top" src="https://img.shields.io/badge/Python-_?style=for-the-badge&logo=Python&color=rgb(0%200%200%20%2F%200%25)" />
 - [erb-formatter](https://github.com/nebulab/erb-formatter) - Format ERB files with speed and precision. <img align="top" src="https://img.shields.io/badge/HTML-_?style=for-the-badge&logo=html5&color=rgb(0%200%200%20%2F%200%25)" /> <img align="top" src="https://img.shields.io/badge/Ruby-_?style=for-the-badge&logo=Ruby&color=rgb(0%200%200%20%2F%200%25)" />
 - [goimports](https://pkg.go.dev/golang.org/x/tools/cmd/goimports) - A golang formatter which formats your code in the same style as gofmt and additionally updates your Go import lines,
@@ -122,7 +130,7 @@ adding missing ones and removing unreferenced ones. <img align="top" src="https:
 - [rubocop](https://rubocop.org) - The Ruby Linter/Formatter that Serves and Protects. <img align="top" src="https://img.shields.io/badge/Ruby-_?style=for-the-badge&logo=Ruby&color=rgb(0%200%200%20%2F%200%25)" />
 - [stylua](https://github.com/JohnnyMorganz/StyLua) - An opinionated Lua code formatter. <img align="top" src="https://img.shields.io/badge/Lua-_?style=for-the-badge&logo=Lua&color=rgb(0%200%200%20%2F%200%25)" /> <img align="top" src="https://img.shields.io/badge/Luau-_?style=for-the-badge&logo=Luau&color=rgb(0%200%200%20%2F%200%25)" />
 
-### LSP
+#### LSP
 - [basedpyright](https://detachhead.github.io/basedpyright) - Fork of the Pyright static type checker for Python, with extra Pylance features. <img align="top" src="https://img.shields.io/badge/Python-_?style=for-the-badge&logo=Python&color=rgb(0%200%200%20%2F%200%25)" />
 - [gopls](https://pkg.go.dev/golang.org/x/tools/gopls) - gopls (pronounced "Go please") is the official Go language server developed by the Go team. It provides IDE features
 to any LSP-compatible editor. <img align="top" src="https://img.shields.io/badge/Go-_?style=for-the-badge&logo=Go&color=rgb(0%200%200%20%2F%200%25)" />
@@ -137,7 +145,7 @@ to any LSP-compatible editor. <img align="top" src="https://img.shields.io/badge
 - [typescript-language-server](https://github.com/typescript-language-server/typescript-language-server) - TypeScript & JavaScript Language Server. <img align="top" src="https://img.shields.io/badge/TypeScript-_?style=for-the-badge&logo=TypeScript&color=rgb(0%200%200%20%2F%200%25)" /> <img align="top" src="https://img.shields.io/badge/JavaScript-_?style=for-the-badge&logo=JavaScript&color=rgb(0%200%200%20%2F%200%25)" />
 - [vue-language-server](https://github.com/vuejs/language-tools) - ⚡ Explore high-performance tooling for Vue. <img align="top" src="https://img.shields.io/badge/Vue-_?style=for-the-badge&logo=vuedotjs&color=rgb(0%200%200%20%2F%200%25)" />
 
-### Linter
+#### Linter
 - [erb-lint](https://github.com/Shopify/erb-lint) - erb-lint is a tool to help lint your ERB or HTML files using the included linters or by writing your own. <img align="top" src="https://img.shields.io/badge/HTML-_?style=for-the-badge&logo=html5&color=rgb(0%200%200%20%2F%200%25)" /> <img align="top" src="https://img.shields.io/badge/Ruby-_?style=for-the-badge&logo=Ruby&color=rgb(0%200%200%20%2F%200%25)" />
 - [eslint_d](https://github.com/mantoni/eslint_d.js/) - Makes eslint the fastest linter on the planet. <img align="top" src="https://img.shields.io/badge/TypeScript-_?style=for-the-badge&logo=TypeScript&color=rgb(0%200%200%20%2F%200%25)" /> <img align="top" src="https://img.shields.io/badge/JavaScript-_?style=for-the-badge&logo=JavaScript&color=rgb(0%200%200%20%2F%200%25)" />
 - [mypy](https://github.com/python/mypy) - Mypy is a static type checker for Python. <img align="top" src="https://img.shields.io/badge/Python-_?style=for-the-badge&logo=Python&color=rgb(0%200%200%20%2F%200%25)" />

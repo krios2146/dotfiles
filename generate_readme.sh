@@ -15,7 +15,7 @@ for p in $installed_plugins; do
     plugins="${plugins:+$plugins,}$plugin"
 done
 
-plugins=$(echo "[$plugins]" | jq -r 'group_by(.category) | .[] | "### \(.[0].category)\n\(map("- [\(.repo)](\(.url)) - \(.description)") | join("\n"))\n"')
+plugins=$(echo "[$plugins]" | jq -r 'group_by(.category) | .[] | "#### \(.[0].category)\n\(map("- [\(.repo)](\(.url)) - \(.description)") | join("\n"))\n"')
 
 installed_editor_tools=$(ls ~/.local/share/nvim/mason/packages)
 
@@ -35,7 +35,7 @@ editor_tools=$(echo "[$editor_tools]" | jq -r '
   ) |
   group_by(.category) |
   .[] |
-  "### \(.[0].category)\n\(map("- [\(.name)](\(.url)) - \(.description) \(if (.name | IN($skip[])) then "" else (.languages | map("<img align=\"top\" src=\"https://img.shields.io/badge/\(.)-_?style=for-the-badge&logo=\(.)&color=rgb(0%200%200%20%2F%200%25)\" />") | join(" ")) end)") | join("\n"))\n"
+  "#### \(.[0].category)\n\(map("- [\(.name)](\(.url)) - \(.description) \(if (.name | IN($skip[])) then "" else (.languages | map("<img align=\"top\" src=\"https://img.shields.io/badge/\(.)-_?style=for-the-badge&logo=\(.)&color=rgb(0%200%200%20%2F%200%25)\" />") | join(" ")) end)") | join("\n"))\n"
 ' | sed 's/logo=HTML/logo=html5/g' | sed 's/logo=SCSS/logo=sass/g' | sed 's/logo=Vue/logo=vuedotjs/g' | sed 's/logo=C++/logo=cplusplus/g' | sed 's/&logo=C#//g' | sed 's/C#/C%23/g' | sed 's/logo=CSS/logo=tailwindcss/g' | sed 's/CSS-_/Tailwind CSS-_/g')
 
 python3 -c "
