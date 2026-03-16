@@ -16,5 +16,4 @@ return {
     end,
   },
   { 'nanotech/jellybeans.vim' },
-  { 'krios2146/1984.nvim' },
 }

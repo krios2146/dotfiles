@@ -1,5 +1,7 @@
 #!/bin/bash
 
+./generate_readme.sh
+
 git add -A
 
 changed_dirs=$(git diff --cached --name-only | awk -F/ '{print $1}' | sort -u)
