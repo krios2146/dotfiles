@@ -54,7 +54,8 @@
   font-weight: bold;
 }
 
-#custom-network.disconnected {
+#custom-network.disconnected,
+#custom-network.ridiculous {
   color: red;
   font-weight: bold;
 }
