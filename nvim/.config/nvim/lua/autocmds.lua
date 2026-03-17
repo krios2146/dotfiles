@@ -9,6 +9,22 @@ vim.api.nvim_create_autocmd({ 'ColorScheme', 'VimEnter' }, {
   end,
 })
 
+vim.api.nvim_create_autocmd({ 'BufEnter', 'WinEnter' }, {
+  callback = function()
+    local ft = vim.bo.filetype
+    if ft == 'neo-tree' then
+      _G._cursor_backup = _G._cursor_backup or vim.o.guicursor
+      vim.api.nvim_set_hl(0, 'noCursor', { blend = 100, strikethrough = true })
+      vim.opt.guicursor = 'a:noCursor'
+    else
+      if _G._cursor_backup then
+        vim.o.guicursor = _G._cursor_backup
+        _G._cursor_backup = nil
+      end
+    end
+  end,
+})
+
 vim.api.nvim_create_autocmd('TextYankPost', {
   group = vim.api.nvim_create_augroup('highlight-on-yank', { clear = true }),
   callback = function()

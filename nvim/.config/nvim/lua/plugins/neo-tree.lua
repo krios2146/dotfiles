@@ -53,22 +53,6 @@ return {
           end,
         },
         {
-          event = 'neo_tree_buffer_enter',
-          handler = function()
-            _G._cursor_backup = vim.o.guicursor
-            vim.api.nvim_set_hl(0, 'noCursor', { blend = 100, strikethrough = true })
-            vim.opt.guicursor = 'a:noCursor'
-          end,
-        },
-        {
-          event = 'neo_tree_buffer_leave',
-          handler = function()
-            if _G._cursor_backup then
-              vim.o.guicursor = _G._cursor_backup
-            end
-          end,
-        },
-        {
           event = 'neo_tree_window_after_open',
           handler = function()
             if _G._neo_tree_initial_closed == true then
