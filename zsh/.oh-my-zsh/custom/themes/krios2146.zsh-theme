@@ -18,5 +18,5 @@ ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[red]%}⊗%{$reset_color%} "
 ZSH_THEME_GIT_PROMPT_DIVERGED="%{$fg[red]%}⇵%{$reset_color%} "
 ZSH_THEME_GIT_PROMPT_STASHED="%{$fg[cyan]%}◌%{$reset_color%} "
 
-ZSH_THEME_VIRTUALENV_PREFIX="(%{$fg[yellow]%}"
-ZSH_THEME_VIRTUALENV_SUFFIX="%{$reset_color%})"
+ZSH_THEME_VIRTUALENV_PREFIX="%{$fg[yellow]%}"
+ZSH_THEME_VIRTUALENV_SUFFIX="%{$reset_color%}"

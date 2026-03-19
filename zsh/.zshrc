@@ -56,7 +56,7 @@ export FZF_ALT_C_OPTS="
   --preview 'ls --color=always {}'
   --preview-window=right:50%:border-rounded
 "
-
+export VIRTUAL_ENV_DISABLE_PROMPT=1
 export GOPATH="$HOME"/.local/share/go
 export PATH="$PATH:$(go env GOPATH)/bin"
 
