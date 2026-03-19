@@ -12,6 +12,7 @@ return {
       local mason_dap = require 'mason-nvim-dap'
       local dap = require 'dap'
       local ui = require 'dapui'
+      local dap_utils = require 'dap.utils'
 
       mason_dap.setup {
         ensure_installed = { 'delve' },
@@ -26,9 +27,10 @@ return {
       dap.configurations.go = {
         {
           type = 'delve',
-          name = 'Debug',
-          request = 'launch',
-          program = '${file}',
+          name = 'Attach',
+          request = 'attach',
+          mode = 'local',
+          processId = require('dap.utils').pick_process,
         },
       }
 
