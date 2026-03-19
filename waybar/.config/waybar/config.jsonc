@@ -55,10 +55,10 @@
     "format": "{text}",
   },
   "custom/weather": {
-    "format": "{}°",
+    "format": "{}",
     "tooltip": true,
-    "interval": 3600,
-    "exec": "wttrbar --location Krasnoyarsk --nerd",
+    "restart-interval": 3600,
+    "exec": "./weather.zsh",
     "return-type": "json"
   },
   "tray": {
