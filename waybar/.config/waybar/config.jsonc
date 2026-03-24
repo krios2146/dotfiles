@@ -52,14 +52,14 @@
     "exec": "cat /tmp/sing-box.json",
     "return-type": "json",
     "interval": 3,
-    "format": "{text}",
+    "format": "{text}"
   },
   "custom/weather": {
-    "format": "{}",
-    "tooltip": true,
+    "exec": "~/.config/waybar/weather.sh",
+    "return-type": "json",
     "restart-interval": 3600,
-    "exec": "./weather.zsh",
-    "return-type": "json"
+    "tooltip": true,
+    "format": "{text}"
   },
   "tray": {
     "icon-size": 16,
@@ -95,5 +95,6 @@
   "hyprland/language": {
       "format-en": "EN",
       "format-ru": "RU",
+      "keyboard-name": "k.t.e.c.-ergodone-keyboard"
   }
 }

@@ -42,6 +42,7 @@ stow -t ~ */
 #### Completion
 - [hrsh7th/cmp-buffer](https://github.com/hrsh7th/cmp-buffer) - `nvim-cmp` source for buffer words.
 - [hrsh7th/cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp) - `nvim-cmp` source for the built-in LSP client.
+- [hrsh7th/cmp-nvim-lsp-signature-help](https://github.com/hrsh7th/cmp-nvim-lsp-signature-help) - `nvim-cmp` source for displaying function signatures from an LSP client.
 - [hrsh7th/cmp-path](https://github.com/hrsh7th/cmp-path) - `nvim-cmp` source for filesystem paths.
 - [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp) - Completion engine written in Lua, successor of `nvim-compe`.
 - [saadparwaiz1/cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip) - `nvim-cmp` source for `LuaSnip`.

@@ -64,3 +64,7 @@ source ~/.local/share/omarchy/default/bash/aliases
 
 eval "$(zoxide init zsh)"
 eval "$(mise activate zsh)"
+
+miseoff() {
+  PATH=$(echo $PATH | tr ':' '\n' | grep -v mise/installs/python | grep -v mise/shims | tr '\n' ':') "$@"
+}

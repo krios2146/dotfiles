@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/zsh
 
 typeset -A weather_types
 typeset -A weather_symbols_day
@@ -102,7 +102,7 @@ weather_symbols_night=(
 # just doesn't fucking work
 # curl -s 'wttr.in/krasnoyarsk?format=1'
 
-data="$(curl -s 'wttr.in/krasnoyarsk?format=j1' | jq '.data')"
+data="$(curl -s 'wttr.in/krasnoyarsk?format=j1')"
 current_condition="$(echo $data | jq '.current_condition | .[]')"
 
 astronomy="$(echo $data | jq '.weather.[0].astronomy.[0]')"
