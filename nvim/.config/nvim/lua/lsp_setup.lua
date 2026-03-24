@@ -54,10 +54,23 @@ local configs = {
     },
   },
 
+  -- https://go.dev/gopls/settings
   gopls = {
-    usePlaceholder = true,
-    analyses = {
-      unusedvariable = true,
+    settings = {
+      gopls = {
+        usePlaceholders = true,
+        staticcheck = true,
+        hints = {
+          assignVariableTypes = true,
+          compositeLiteralFields = true,
+          constantValues = true,
+          ignoredError = true,
+          rangeVariableTypes = true,
+        },
+        analyses = {
+          unusedvariable = true,
+        },
+      },
     },
   },
 
@@ -134,3 +147,5 @@ vim.diagnostic.config {
 require('mason-tool-installer').setup {
   ensure_installed = concat(server_names, language_tools),
 }
+
+vim.lsp.inlay_hint.enable(true)

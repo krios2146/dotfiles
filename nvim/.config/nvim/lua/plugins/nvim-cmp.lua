@@ -2,7 +2,6 @@
 return {
   {
     'hrsh7th/nvim-cmp',
-    event = 'InsertEnter',
     dependencies = {
       'L3MON4D3/LuaSnip',
       'saadparwaiz1/cmp_luasnip',
@@ -10,8 +9,10 @@ return {
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-buffer',
       'onsails/lspkind.nvim',
+      'hrsh7th/cmp-nvim-lsp-signature-help',
       'supermaven-inc/supermaven-nvim',
     },
+    lazy = false,
     config = function()
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
@@ -54,6 +55,11 @@ return {
             luasnip.lsp_expand(args.body)
           end,
         },
+        window = {
+          documentation = {
+            border = 'rounded',
+          },
+        },
         completion = {
           completeopt = 'menu,menuone,noinsert',
           keyword_pattern = [[\k\+]],
@@ -65,7 +71,16 @@ return {
           ['<C-u>'] = cmp.mapping.scroll_docs(-4),
           ['<C-d>'] = cmp.mapping.scroll_docs(4),
           ['<Enter>'] = cmp.mapping.confirm { select = true },
-          -- ['<C-Space>'] = cmp.mapping.complete {},
+          ['<C-Space>'] = cmp.mapping.complete(),
+          ['<C-f>'] = cmp.mapping(function()
+            cmp.complete {
+              config = {
+                sources = {
+                  { name = 'supermaven' },
+                },
+              },
+            }
+          end),
           ['<C-l>'] = cmp.mapping(luasnip_jump_forward, { 'i', 's' }),
           ['<C-h>'] = cmp.mapping(luasnip_jump_back, { 'i', 's' }),
           ['<C-k>'] = cmp.mapping(luasnip_choice_next, { 'i', 's' }),
@@ -73,8 +88,8 @@ return {
         },
         sources = {
           { name = 'nvim_lsp' },
+          { name = 'nvim_lsp_signature_help' },
           { name = 'luasnip' },
-          { name = 'supermaven' },
           { name = 'path' },
           { name = 'buffer' },
         },

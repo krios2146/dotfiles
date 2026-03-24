@@ -75,7 +75,7 @@ vim.keymap.set('n', '<leader>lw',           builtin.lsp_dynamic_workspace_symbol
 vim.keymap.set('n', '<leader>li',           builtin.lsp_incoming_calls,             { desc = 'LSP: Incoming Calls' })
 vim.keymap.set('n', '<leader>lo',           builtin.lsp_outgoing_calls,             { desc = 'LSP: Outgoing Calls' })
 vim.keymap.set('n', '<leader>lr',           vim.lsp.buf.rename,                     { desc = 'LSP: Rename' })
-vim.keymap.set('n', '<leader>la',           vim.lsp.buf.code_action,                { desc = 'LSP: Code Action' })
+vim.keymap.set(all, '<leader>la',           vim.lsp.buf.code_action,                { desc = 'LSP: Code Action' })
 vim.keymap.set('n', '<S-k>',                vim.lsp.buf.hover,                      { desc = 'LSP: Hover' })
 vim.keymap.set('n', '<leader>lc',           vim.lsp.buf.declaration,                { desc = 'LSP: Declaration' })
 vim.keymap.set('n', '<leader>lh',           vim.lsp.buf.document_highlight,         { desc = 'LSP: Document Highlight' })
