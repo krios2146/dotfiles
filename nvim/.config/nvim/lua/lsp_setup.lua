@@ -83,6 +83,10 @@ local configs = {
   gleam = {},
 
   kotlin_lsp = {},
+
+  clangd = {
+    cmd = { 'clangd', '--clang-tidy' },
+  },
 }
 
 local language_tools = {

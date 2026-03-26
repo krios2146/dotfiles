@@ -6,6 +6,7 @@ return {
         lsp_fallback = true,
       },
       formatters_by_ft = {
+        cpp = { 'clang_format' },
         lua = { 'stylua' },
         javascript = { 'prettier' },
         typescript = { 'prettier' },
