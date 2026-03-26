@@ -133,6 +133,8 @@ adding missing ones and removing unreferenced ones. <img align="top" src="https:
 
 #### LSP
 - [basedpyright](https://detachhead.github.io/basedpyright) - Fork of the Pyright static type checker for Python, with extra Pylance features. <img align="top" src="https://img.shields.io/badge/Python-_?style=for-the-badge&logo=Python&color=rgb(0%200%200%20%2F%200%25)" />
+- [clangd](https://clangd.llvm.org) - clangd understands your C++ code and adds smart features to your editor: code completion, compile errors,
+go-to-definition and more. <img align="top" src="https://img.shields.io/badge/C-_?style=for-the-badge&logo=C&color=rgb(0%200%200%20%2F%200%25)" /> <img align="top" src="https://img.shields.io/badge/C++-_?style=for-the-badge&logo=cplusplus&color=rgb(0%200%200%20%2F%200%25)" />
 - [gopls](https://pkg.go.dev/golang.org/x/tools/gopls) - gopls (pronounced "Go please") is the official Go language server developed by the Go team. It provides IDE features
 to any LSP-compatible editor. <img align="top" src="https://img.shields.io/badge/Go-_?style=for-the-badge&logo=Go&color=rgb(0%200%200%20%2F%200%25)" />
 - [harper-ls](https://github.com/elijah-potter/harper) - The Grammar Checker for Developers. 
