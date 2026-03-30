@@ -40,8 +40,6 @@ local configs = {
 
   tailwindcss = {},
 
-  ltex = {},
-
   basedpyright = {
     settings = {
       basedpyright = {
@@ -74,8 +72,6 @@ local configs = {
     },
   },
 
-  harper_ls = {},
-
   ocamllsp = {},
 
   ruby_lsp = {},
@@ -87,6 +83,10 @@ local configs = {
   clangd = {
     cmd = { 'clangd', '--clang-tidy' },
   },
+
+  markdown_oxide = {},
+
+  codebook = {},
 }
 
 local language_tools = {
@@ -133,8 +133,11 @@ for i, v in ipairs(server_names) do
 end
 
 local default_capabilities = vim.lsp.protocol.make_client_capabilities()
-local cmp_capabilities = vim.tbl_deep_extend('force', default_capabilities, require('cmp_nvim_lsp').default_capabilities())
-vim.lsp.config('*', { capabilities = cmp_capabilities })
+local cmp_capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+vim.lsp.config('*', { capabilities = vim.tbl_deep_extend('force', default_capabilities, cmp_capabilities) })
+
+vim.lsp.inlay_hint.enable(true)
 
 vim.diagnostic.config {
   severity_sort = true,
@@ -151,5 +154,3 @@ vim.diagnostic.config {
 require('mason-tool-installer').setup {
   ensure_installed = concat(server_names, language_tools),
 }
-
-vim.lsp.inlay_hint.enable(true)

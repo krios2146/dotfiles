@@ -1,0 +1,16 @@
+words = [
+    "breakpoint",
+    "colorschemes",
+    "dap",
+    "dapui",
+    "esc",
+    "gitsigns",
+    "guicursor",
+    "keymaps",
+    "lualine",
+    "neotree",
+    "nvim",
+    "nzzzv",
+    "stylua",
+]
+exclude_tags = ["identifier.function"]

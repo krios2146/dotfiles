@@ -17,8 +17,7 @@ vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.opt.foldenable = false -- if `true` everything will be folded by default
 
-vim.opt.spell = true
-vim.opt.spelllang = 'en,ru'
+vim.opt.spell = false
 
 vim.opt.showmode = false
 
