@@ -68,3 +68,5 @@ eval "$(mise activate zsh)"
 miseoff() {
   PATH=$(echo $PATH | tr ':' '\n' | grep -v mise/installs/python | grep -v mise/shims | tr '\n' ':') "$@"
 }
+
+[[ ! -r "$HOME/.opam/opam-init/init.zsh" ]] || source "$HOME/.opam/opam-init/init.zsh" > /dev/null 2> /dev/null
