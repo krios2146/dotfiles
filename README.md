@@ -30,7 +30,6 @@ stow -t ~ */
 - [rose-pine/neovim](https://github.com/rose-pine/neovim) - **_`[TS][LSP][L/D][Lua]`_** All natural pine, faux fur and a bit of soho vibes for the classy minimalist.
 - [sainnhe/everforest](https://github.com/sainnhe/everforest) - **_`[TS][LSP][L/D]`_** A green based colorscheme designed to be warm, soft and easy on the eyes.
 - [shaunsingh/nord.nvim](https://github.com/shaunsingh/nord.nvim) - Neovim theme based off of the Nord Color Palette, written in lua with tree sitter support
-- [xero/miasma.nvim](https://github.com/xero/miasma.nvim) - **_`[TS][LSP]`_** A dark pastel color scheme inspired by the woods. Built using lush and supports Tree-sitter, diagnostics, CMP, Git-Signs, Telescope, Which-key, Lazy, and more.
 
 #### Colorscheme Creation
 - [rktjmp/lush.nvim](https://github.com/rktjmp/lush.nvim) - Define Neovim themes as a DSL in Lua, with real-time feedback.
