@@ -6,7 +6,7 @@
   "height": 30,
   "modules-left": [ "hyprland/workspaces", "tray"],
   "modules-center": [ "clock", "custom/update" ],
-  "modules-right": [ "custom/weather", "bluetooth", "pulseaudio", "custom/network", "custom/singbox", "hyprland/language" ],
+  "modules-right": [ "custom/weather", "bluetooth", "pulseaudio", "custom/network", "hyprland/language" ],
   "hyprland/workspaces": {
     "persistent-only": true,
     "on-click": "activate",
@@ -23,7 +23,7 @@
   },
   "clock": {
     "interval": 1,
-    "format": "<b>{:%b %d ⏐ %T ⏐ %a}</b>",
+    "format": "<b>{:%b %d %a %T}</b>",
     "tooltip-format": "<big>{calendar}</big>",
     "locale": "en_GB.UTF-8",
     "calendar": {
@@ -31,7 +31,7 @@
       "weeks-pos": "right",
       "on-scroll": 1,
       "format": {
-        "weeks": "<span color='gray'>{:%W}</span>",
+        "weeks": "<span color='gray'>{:%V}</span>",
         "today": "<span color='green'><b>{}</b></span>"
       }
     },
@@ -47,12 +47,6 @@
     "tooltip-format": "Omarchy update available",
     "signal": 7,
     "interval": 21600
-  },
-  "custom/singbox": {
-    "exec": "cat /tmp/sing-box.json",
-    "return-type": "json",
-    "interval": 3,
-    "format": "{text}"
   },
   "custom/weather": {
     "exec": "~/.config/waybar/weather.sh",

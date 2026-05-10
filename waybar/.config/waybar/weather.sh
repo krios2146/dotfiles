@@ -102,14 +102,13 @@ weather_symbols_night=(
 # just doesn't fucking work
 # curl -s 'wttr.in/krasnoyarsk?format=1'
 
-data="$(curl -s 'wttr.in/krasnoyarsk?format=j1')"
+data="$(curl -s 'wttr.in/tbilisi?format=j1')"
 current_condition="$(echo $data | jq '.current_condition | .[]')"
 
 astronomy="$(echo $data | jq '.weather.[0].astronomy.[0]')"
 sunset="$(echo $astronomy | jq -r '.sunset' | xargs -I xdd date -d xdd +%s)"
 sunrise="$(echo $astronomy | jq -r '.sunrise' | xargs -I xdd date -d xdd +%s)"
 current_time="$(date +%s)"
-
 
 weather_symbols_map="weather_symbols_night"
 if [ "$current_time" -gt "$sunrise" ] && [ "$current_time" -lt "$sunset" ]; then
@@ -122,7 +121,7 @@ weather_type=$weather_types[$weather_code]
 weather_icon=${${(P)weather_symbols_map}[$weather_type]}
 
 text="$weather_icon $temp"
-tooltip="$(curl -s 'https://wttr.in/krasnoyarsk?M&T')"
+tooltip="$(curl -s 'https://wttr.in/tbilisi?M&T')"
 tooltip="$(echo $tooltip | sed '1d' | head -n -3)"
 
 jq -nc --arg text "$text" --arg tooltip "$tooltip" '{text:$text, tooltip:$tooltip}'
