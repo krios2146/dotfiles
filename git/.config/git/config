@@ -5,7 +5,7 @@
 	editor = nvim
 	autocrlf = input
 [alias]
-  pudge = push
+	pudge = push
 [init]
 	defaultBranch = master
 [pull]
