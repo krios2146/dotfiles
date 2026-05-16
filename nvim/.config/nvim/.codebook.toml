@@ -4,6 +4,7 @@ words = [
     "dap",
     "dapui",
     "esc",
+    "frontmatter",
     "gitsigns",
     "guicursor",
     "keymaps",

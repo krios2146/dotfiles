@@ -87,6 +87,8 @@ local configs = {
   markdown_oxide = {},
 
   codebook = {},
+
+  zls = {},
 }
 
 local language_tools = {
