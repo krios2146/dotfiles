@@ -1,0 +1,10 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = spotify
+
+[Action]
+Description = Re-patching Spotify with SpotX-Bash...
+When = PostTransaction
+Exec = /bin/bash -c 'bash <(curl -sSL https://spotx-official.github.io/run.sh) -f'
