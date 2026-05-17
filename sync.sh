@@ -12,3 +12,6 @@ for dir in $changed_dirs; do
 done
 
 git pudge
+
+stow -t ~ --ignore='^system$' */
+sudo stow -d ~/dotfiles/system -t / */
