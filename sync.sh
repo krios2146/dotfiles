@@ -14,4 +14,4 @@ done
 git pudge
 
 stow -t ~ --ignore='^system$' */
-sudo stow -d ~/dotfiles/system -t / */
+sudo stow -t / ~/dotfiles/system/*/
