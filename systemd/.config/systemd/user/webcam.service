@@ -3,7 +3,7 @@ Description=IP Webcam via USB tethering
 After=network.target systemd-networkd.service
 
 [Service]
-ExecStart=/usr/local/bin/webcam-setup.sh
+ExecStart=/home/krios2146/.config/scripts/webcam-setup.sh
 Restart=on-failure
 RestartSec=5
 
