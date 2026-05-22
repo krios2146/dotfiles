@@ -15,5 +15,5 @@ done
 
 git pudge
 
-stow -t ~ $(ls -d1 */ | rg -v '.*system$')
+stow -t ~ $(ls -d1 */ | rg -v '.*system/$')
 cd system && sudo stow -t / */
