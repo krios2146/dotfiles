@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 ./generate_readme.sh
 
 git add -A
