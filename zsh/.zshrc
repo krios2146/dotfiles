@@ -25,6 +25,8 @@ source $ZSH/oh-my-zsh.sh
 # zsh configuration
 #
 
+source ~/.secrets
+
 export FZF_DEFAULT_OPTS='
   --tmux=80%
   --multi
