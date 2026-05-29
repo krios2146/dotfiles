@@ -2,12 +2,18 @@ return {
   { 'tpope/vim-sleuth' }, -- Detect `tabstop` and `shiftwidth` automatically
   { 'numToStr/Comment.nvim', opts = {} },
   { 'windwp/nvim-ts-autotag', opts = {} },
-  { 'wakatime/vim-wakatime' },
   { 'tpope/vim-fugitive' },
   { 'lukas-reineke/indent-blankline.nvim', main = 'ibl', opts = { enabled = false } },
   { 'rktjmp/lush.nvim' },
   { 'folke/which-key.nvim', event = 'VeryLazy' },
   { 'stevearc/dressing.nvim', opts = {} },
+  {
+    'wakatime/vim-wakatime',
+    lazy = false,
+    opts = {
+      status_bar_enabled = false,
+    },
+  },
   {
     'lewis6991/gitsigns.nvim',
     opts = {

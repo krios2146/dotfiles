@@ -33,20 +33,46 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 vim.api.nvim_create_autocmd('LspAttach', {
-  group = vim.api.nvim_create_augroup('lsp-highlight', { clear = true }),
+  group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
+
   callback = function(event)
     local client = vim.lsp.get_client_by_id(event.data.client_id)
 
-    if client and client.server_capabilities.documentHighlightProvider then
+    if not client then
+      return
+    end
+
+    -- document highlights
+    if client:supports_method 'textDocument/documentHighlight' then
+      local group = vim.api.nvim_create_augroup('lsp-highlight-' .. event.buf, { clear = true })
+
       vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+        group = group,
         buffer = event.buf,
+        desc = 'LSP document highlight',
         callback = vim.lsp.buf.document_highlight,
       })
 
       vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
+        group = group,
         buffer = event.buf,
+        desc = 'LSP clear references',
         callback = vim.lsp.buf.clear_references,
       })
+
+      vim.api.nvim_create_autocmd('LspDetach', {
+        group = vim.api.nvim_create_augroup('lsp-highlight-detach-' .. event.buf, { clear = true }),
+        buffer = event.buf,
+        desc = 'LSP clear highlight augroup on detach',
+        callback = function()
+          vim.api.nvim_del_augroup_by_name('lsp-highlight-' .. event.buf)
+        end,
+      })
+    end
+
+    -- code lenses
+    if client:supports_method 'textDocument/codeLens' then
+      vim.lsp.codelens.enable(true, { bufnr = event.buf })
     end
   end,
 })

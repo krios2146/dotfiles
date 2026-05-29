@@ -16,6 +16,7 @@ return {
         ocaml = { 'ocamlformat' },
         ruby = { 'rubocop' },
         eruby = { 'erb-formatter' },
+        markdown = { 'markdownlint' },
       },
     },
   },

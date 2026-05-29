@@ -12,6 +12,7 @@ return {
         vue = { 'eslint_d' },
         eruby = { 'erb_lint' },
         ruby = { 'rubocop' },
+        markdown = { 'markdownlint' },
       }
 
       vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWritePost', 'InsertLeave' }, {
