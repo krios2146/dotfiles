@@ -1,0 +1,100 @@
+{
+  "reload_style_on_change": true,
+  "layer": "top",
+  "position": "top",
+  "spacing": 0,
+  "height": 30,
+  "modules-left": [ "hyprland/workspaces", "tray"],
+  "modules-center": [ "clock", "custom/update" ],
+  "modules-right": [ "wireplumber#microphone", "custom/weather", "bluetooth", "pulseaudio", "custom/network", "hyprland/language" ],
+  "hyprland/workspaces": {
+    "persistent-only": true,
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+      "default": "●",
+      "empty": "○",
+      "active": "●"
+    },
+    "persistent-workspaces": {
+      "DP-2": [1, 2, 3, 4, 5],
+      "DP-3": [6, 7, 8, 9, 10],
+    },
+  },
+  "clock": {
+    "interval": 1,
+    "format": "<b>{:%b %d %a %T}</b>",
+    "tooltip-format": "<big>{calendar}</big>",
+    "locale": "en_GB.UTF-8",
+    "calendar": {
+      "mode": "month",
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "format": {
+        "weeks": "<span color='gray'>{:%V}</span>",
+        "today": "<span color='green'><b>{}</b></span>"
+      }
+    },
+    "actions": {
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+  "custom/update": {
+    "format": "",
+    "exec": "omarchy-update-available",
+    "on-click": "omarchy-launch-floating-terminal-with-presentation omarchy-update",
+    "tooltip-format": "Omarchy update available",
+    "signal": 7,
+    "interval": 21600
+  },
+  "wireplumber#microphone": {
+    "node-type": "Audio/Source",
+    "format": " {volume}%",
+    "format-muted": " MUTED",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+  },
+  "custom/weather": {
+    "exec": "~/.config/waybar/weather.sh",
+    "return-type": "json",
+    "restart-interval": 3600,
+    "tooltip": true,
+    "format": "{text}"
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 17
+  },
+  "bluetooth": {
+    "format": " {status}",
+    "format-off": "󰂲 {status}",
+    "format-disabled": "󰂲 {status}",
+    "format-connected": "󰂱 {status}",
+    "format-connected-battery": "󰂱 {device_battery_percentage}%",
+    "format-no-controller": "",
+    "tooltip-format": "Devices connected: {num_connections}",
+    "on-click": "omarchy-launch-bluetooth"
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "on-click": "omarchy-launch-audio",
+    "on-click-right": "pamixer -t",
+    "scroll-step": 5,
+    "format-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "headset": "",
+      "default": ["", "", ""]
+    }
+  },
+  "custom/network": {
+    "exec": "cat /tmp/network-check.json",
+    "return-type": "json",
+    "interval": 5,
+  },
+  "hyprland/language": {
+      "format-en": "EN",
+      "format-ru": "RU",
+      "keyboard-name": "k.t.e.c.-ergodone-keyboard"
+  }
+}
