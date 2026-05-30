@@ -6,7 +6,7 @@
   "height": 30,
   "modules-left": [ "hyprland/workspaces", "tray"],
   "modules-center": [ "clock", "custom/update" ],
-  "modules-right": [ "wireplumber#microphone", "custom/weather", "bluetooth", "pulseaudio", "custom/network", "hyprland/language" ],
+  "modules-right": [ "custom/weather", "wireplumber#microphone",  "bluetooth", "pulseaudio", "custom/network", "hyprland/language" ],
   "hyprland/workspaces": {
     "persistent-only": true,
     "on-click": "activate",
@@ -48,18 +48,18 @@
     "signal": 7,
     "interval": 21600
   },
-  "wireplumber#microphone": {
-    "node-type": "Audio/Source",
-    "format": " {volume}%",
-    "format-muted": " MUTED",
-    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-  },
   "custom/weather": {
     "exec": "~/.config/waybar/weather.sh",
     "return-type": "json",
     "restart-interval": 3600,
     "tooltip": true,
     "format": "{text}"
+  },
+  "wireplumber#microphone": {
+    "node-type": "Audio/Source",
+    "format": "{icon}",
+    "format-muted": "󰍭",
+    "format-icons": ["󰍮", "󰍬"]
   },
   "tray": {
     "icon-size": 16,
