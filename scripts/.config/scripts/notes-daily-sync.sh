@@ -1,9 +1,9 @@
 #!/bin/sh
 
-ssh phone "cd storage/shared/notes && bash sync.sh"
+ssh phone "cd storage/shared/notes && git pull --rebase --autostash && bash sync.sh"
 
 cd ~/Documents/notes
 
-git pull --rebase
+git pull --rebase --autostash
 
 ./sync.sh
