@@ -1,0 +1,6 @@
+[Unit]
+Description=Notes daily synchronization
+
+[Service]
+Type=oneshot
+ExecStart=/home/krios2146/.config/scripts/notes-daily-sync.sh
