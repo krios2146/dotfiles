@@ -101,3 +101,10 @@ vim.api.nvim_create_autocmd('FileType', {
     require('ibl').setup_buffer(0, { enabled = true, scope = { enabled = false } })
   end,
 })
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'markdown',
+  callback = function(ev)
+    vim.opt_local.colorcolumn = '80'
+  end,
+})

@@ -2,7 +2,7 @@
 
 local function get_frontmatter()
   local now = os.time()
-  local monday = now - (7 * 24 * 60 * 60)
+  local monday = now - (6 * 24 * 60 * 60)
   local past_sunday = monday - (24 * 60 * 60)
   local next_monday = now + (26 * 60 * 60)
 
@@ -12,15 +12,15 @@ local function get_frontmatter()
   local current_month = os.date('[[%G-%B]]', now)
   local monday_month = os.date('[[%G-%B]]', monday)
 
-  local month = current_month
+  local months = { current_month }
   if current_month ~= monday_month then
-    month = '\n\t- ' .. current_month .. '\n\t- ' .. monday_month
+    table.insert(months, monday_month)
   end
 
   local past_week = os.date('[[%G-W%V]]', past_sunday)
   local next_week = os.date('[[%G-W%V]]', next_monday)
 
-  return { time = time, date = date, month = month, past_week = past_week, next_week = next_week }
+  return { time = time, date = date, months = months, past_week = past_week, next_week = next_week }
 end
 
 return {
@@ -41,21 +41,30 @@ return {
     i(0),
   }),
   s('wk', {
+    t { '---', '' },
     f(function()
       local frontmatter = get_frontmatter()
-      return {
-        '---',
+
+      local lines = {
         'time: ' .. frontmatter.time,
         'date: ' .. frontmatter.date,
-        'month: ' .. frontmatter.month,
-        'past_week: ' .. frontmatter.past_week,
-        'next_week: ' .. frontmatter.next_week,
-        'tags: #journal/weekly',
-        '---',
-        '',
-        '',
       }
-    end, {}),
+
+      if #frontmatter.months == 1 then
+        table.insert(lines, 'month: ' .. frontmatter.months[1])
+      else
+        table.insert(list, 'month: ')
+        for _, month in ipairs(frontmatter.months) do
+          table.insert(lines, '\t- ' .. month)
+        end
+      end
+
+      table.insert(lines, 'past_week: ' .. frontmatter.past_week)
+      table.insert(lines, 'next_week: ' .. frontmatter.next_week)
+
+      return lines
+    end),
+    t { '', 'tags: #journal/weekly', '---', '', '' },
     i(1),
   }),
 }
