@@ -12,3 +12,5 @@ done
 cd ~/Documents/notes
 git pull --rebase --autostash
 ./sync.sh
+
+git push mirror
