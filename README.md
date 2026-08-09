@@ -21,15 +21,15 @@ stow -t ~ */
 
 #### Colorscheme
 - [catppuccin/nvim](https://github.com/catppuccin/nvim) - 🍨 Soothing pastel theme for (Neo)vim
+- [EdenEast/nightfox.nvim](https://github.com/EdenEast/nightfox.nvim) - **_`[TS][LSP][L/D][Lua]`_** A soft dark, fully customizable colorscheme with support for LSP, Tree-sitter and a variety of plugins.
 - [ellisonleao/gruvbox.nvim](https://github.com/ellisonleao/gruvbox.nvim) - **_`[TS][LSP][L/D][Lua]`_** Gruvbox community colorscheme Lua port.
 - [folke/tokyonight.nvim](https://github.com/folke/tokyonight.nvim) - **_`[TS][LSP][L/D][Lua]`_** A clean, dark and light theme written in Lua, with support for LSP, Tree-sitter and lots of plugins.
 - [marko-cerovac/material.nvim](https://github.com/marko-cerovac/material.nvim) - **_`[TS][LSP][L/D][Lua]`_** Material.nvim is a highly configurable colorscheme written in Lua and based on the material palette.
+- [neanias/everforest-nvim](https://github.com/neanias/everforest-nvim) - **_`[TS][LSP][L/D][Lua]`_** A Lua port of the Everforest colour scheme.
 - [ray-x/aurora](https://github.com/ray-x/aurora) - **_`[TS][LSP][Lua]`_** A 24-bit dark theme with Tree-sitter and LSP support.
 - [rebelot/kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim) - **_`[TS][LSP][L/D][Lua]`_** A dark colorscheme inspired by the colors of the famous painting by Katsushika Hokusai.
 - [ribru17/bamboo.nvim](https://github.com/ribru17/bamboo.nvim) - **_`[TS][LSP][Lua]`_** A warm green theme.
 - [rose-pine/neovim](https://github.com/rose-pine/neovim) - **_`[TS][LSP][L/D][Lua]`_** All natural pine, faux fur and a bit of soho vibes for the classy minimalist.
-- [sainnhe/everforest](https://github.com/sainnhe/everforest) - **_`[TS][LSP][L/D]`_** A green based colorscheme designed to be warm, soft and easy on the eyes.
-- [shaunsingh/nord.nvim](https://github.com/shaunsingh/nord.nvim) - Neovim theme based off of the Nord Color Palette, written in lua with tree sitter support
 
 #### Colorscheme Creation
 - [rktjmp/lush.nvim](https://github.com/rktjmp/lush.nvim) - Define Neovim themes as a DSL in Lua, with real-time feedback.
@@ -55,6 +55,7 @@ stow -t ~ */
 - [folke/trouble.nvim](https://github.com/folke/trouble.nvim) - A pretty diagnostics list to help you solve all the trouble your code is causing.
 
 #### Editing Support
+- [nvim-treesitter/nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context) - Shows floating hover with the current function/block context.
 - [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs) - A minimalist autopairs written by Lua.
 - [windwp/nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag) - Use Tree-sitter to autoclose and autorename XML, HTML, JSX tag.
 
@@ -110,7 +111,6 @@ stow -t ~ */
 - [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify) - A fancy, configurable, notification manager.
 
 #### Uncategorised
-- [loctvl842/monokai-pro.nvim](https://github.com/loctvl842/monokai-pro.nvim) - Monokai Pro theme for Neovim written in Lua, with multiple filters: Pro, Classic, Machine, Octagon, Ristretto, Spectrum
 - [tahayvr/matteblack.nvim](https://github.com/tahayvr/matteblack.nvim) - A low distraction dark theme for NeoVim.
 - [wakatime/vim-wakatime](https://github.com/wakatime/vim-wakatime) - Vim plugin for automatic time tracking and metrics generated from your programming activity.
 - [WhoIsSethDaniel/mason-tool-installer.nvim](https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim) - Install and upgrade third party tools automatically
