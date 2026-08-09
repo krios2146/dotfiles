@@ -1,0 +1,11 @@
+[Unit]
+Description=Load v4l2loopback
+After=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=modprobe v4l2loopback card_label=DroidCam exclusive_caps=1
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
