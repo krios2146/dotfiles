@@ -35,6 +35,7 @@ return {
         layout_config = {
           horizontal = {
             preview_width = 0.5, -- Make default preview bigger
+            preview_cutoff = 0,
           },
         },
         mappings = {

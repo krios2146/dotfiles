@@ -4,6 +4,7 @@ local neotree = require 'neo-tree.command'
 local gitsigns = require 'gitsigns'
 local dap = require 'dap'
 local which_key = require 'which-key'
+local render_markdown = require 'render-markdown'
 
 local function visual_lines()
   vim.cmd [[execute "normal! \<ESC>"]]
@@ -105,6 +106,8 @@ vim.keymap.set('n', '<leader>dl',           dap_list_breakpoints,               
 vim.keymap.set('n', '<leader>dr',           dap.clear_breakpoints,                  { desc = 'Debug Remove Breakpoints' })
 
 vim.keymap.set('n', '<leader>n',            open_neotree_with_reveal_file,          { desc = 'Neotree' })
+
+vim.keymap.set('n', '<leader>m',            render_markdown.buf_toggle,          { desc = 'Markdown Render toggle' })
 
 vim.keymap.set('n', '<leader>,',            dismiss_notifications,                  { desc = 'Notification Dismiss' })
 

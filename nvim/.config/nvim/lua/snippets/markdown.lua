@@ -53,7 +53,7 @@ return {
       if #frontmatter.months == 1 then
         table.insert(lines, 'month: ' .. frontmatter.months[1])
       else
-        table.insert(list, 'month: ')
+        table.insert(lines, 'month: ')
         for _, month in ipairs(frontmatter.months) do
           table.insert(lines, '\t- ' .. month)
         end
