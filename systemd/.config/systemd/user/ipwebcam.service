@@ -1,0 +1,12 @@
+[Unit]
+Description=Stream IP Webcam to v4l2loopback
+After=default.target
+
+[Service]
+Type=simple
+ExecStart=ffmpeg -i http://192.168.42.129:1488/video -vf format=yuv420p -f v4l2 /dev/video0
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target
