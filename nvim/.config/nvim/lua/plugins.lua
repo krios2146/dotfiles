@@ -69,6 +69,7 @@ return {
   },
   {
     'EskelinenAntti/omarchy-theme-loader.nvim',
+    tag = 'v1.3.0',
     opts = {
       themes = {
         ['tokyoled'] = { colorscheme = 'tokyonight' },
@@ -87,5 +88,11 @@ return {
   {
     'nvim-treesitter/nvim-treesitter-context',
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
+  },
+  {
+    'phrmendes/todotxt.nvim',
+    opts = {
+      todotxt = vim.env.HOME .. '/Documents/notes/todo.txt',
+    },
   },
 }
