@@ -1,18 +1,20 @@
 # dotfiles
 
-[![wakatime](https://wakatime.com/badge/user/465e62bb-2db9-4043-9075-8cefadda6d94/project/55460503-3b88-45cb-8842-121995123939.svg?style=for-the-badge)](https://wakatime.com/badge/user/465e62bb-2db9-4043-9075-8cefadda6d94/project/55460503-3b88-45cb-8842-121995123939)
+![wakatime](https://wakatime.com/badge/user/465e62bb-2db9-4043-9075-8cefadda6d94/project/55460503-3b88-45cb-8842-121995123939.svg?style=for-the-badge&color=000000&label_color=000000)
 
-Dotfiles for [<img align="top" src="https://img.shields.io/badge/Omarchy-_?style=for-the-badge&logo=omarchy&color=rgb(0%200%200%20%2F%200%25)" />](https://omarchy.org/) managed by [<img align="top" src="https://img.shields.io/badge/GNU Stow-_?style=for-the-badge&logo=gnu&color=rgb(0%200%200%20%2F%200%25)" />](https://www.gnu.org/software/stow/)  
+![https://nixos.org](https://brand.nixos.org/logos/nixos-logo-default-gradient-white-regular-horizontal-recommended.svg)
 
-```sh
-stow -t ~ */
+Dotfiles for **NixOS** managed by [<img align="top" src="https://nix-community.org/nix-community-logo.svg" height="22" alt="Nix Community">](https://github.com/nix-community/home-manager) **Home Manager**
+
+```shell
+nh os switch
 ```
 
-## nvim
+## Neovim <img src="https://cdn.simpleicons.org/neovim" height="20" alt="Neovim">
 
-<a href="https://dotfyle.com/krios2146/dotfiles-nvim-config-nvim"><img src="https://dotfyle.com/krios2146/dotfiles-nvim-config-nvim/badges/plugins?style=for-the-badge" /></a>
-<a href="https://dotfyle.com/krios2146/dotfiles-nvim-config-nvim"><img src="https://dotfyle.com/krios2146/dotfiles-nvim-config-nvim/badges/leaderkey?style=for-the-badge" /></a>
-<a href="https://dotfyle.com/krios2146/dotfiles-nvim-config-nvim"><img src="https://dotfyle.com/krios2146/dotfiles-nvim-config-nvim/badges/plugin-manager?style=for-the-badge" /></a>
+<a href="https://dotfyle.com/krios2146/dotfiles-nvim"><img src="https://dotfyle.com/krios2146/dotfiles-nvim/badges/plugins?style=for-the-badge" /></a>
+<a href="https://dotfyle.com/krios2146/dotfiles-nvim"><img src="https://dotfyle.com/krios2146/dotfiles-nvim/badges/leaderkey?style=for-the-badge" /></a>
+<a href="https://dotfyle.com/krios2146/dotfiles-nvim"><img src="https://dotfyle.com/krios2146/dotfiles-nvim/badges/plugin-manager?style=for-the-badge" /></a>
 
 ### Plugins
 
