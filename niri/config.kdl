@@ -1,0 +1,141 @@
+spawn-at-startup "noctalia"
+spawn-at-startup "firefox"
+spawn-at-startup "ghostty"
+spawn-at-startup "telegram-desktop"
+
+input {
+    keyboard {
+        repeat-delay 200
+	repeat-rate 50
+
+        xkb {
+            layout "us,ru"
+	    options "grp:lalt_lshift_toggle"
+        }
+
+	track-layout "window"
+    }
+    focus-follows-mouse
+
+    mouse {
+	middle-emulation
+    }
+
+    touchpad {
+	off
+    }
+    trackpoint {
+	off
+    }
+}
+
+// Right
+output "DP-1" {
+    focus-at-startup
+    hot-corners {
+	off
+    }
+    scale 1
+}
+
+// Left
+output "HDMI-A-1" {
+    position x=1920 y=0
+    hot-corners {
+	off
+    }
+    scale 1
+}
+
+layout {
+    gaps 0
+    center-focused-column "always"
+    default-column-width { 
+    	proportion 1.0
+    }
+    focus-ring {
+	off
+    }
+    border {
+        off
+    }
+    shadow {
+	off
+    }
+    insert-hint {
+	off
+    }
+}
+
+prefer-no-csd
+
+window-rule {
+    open-maximized-to-edges true
+    geometry-corner-radius 0
+    clip-to-geometry false
+}
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+cursor {
+    hide-when-typing
+    hide-after-inactive-ms 500
+}
+
+workspace "browser" {
+    open-on-output "DP-1"
+}
+workspace "terminal" {
+    open-on-output "DP-1"
+}
+workspace "telegram" {
+    open-on-output "HDMI-A-1"
+}
+
+window-rule {
+    match app-id="firefox"
+    open-on-workspace "browser"
+}
+window-rule {
+    match app-id="com.mitchellh.ghostty"
+    open-on-workspace "terminal"
+}
+window-rule {
+    match app-id="org.telegram.desktop"
+    open-on-workspace "telegram"
+}
+
+binds {
+    Mod+Space { spawn-sh "noctalia msg panel-toggle launcher"; }
+
+    Print { spawn-sh "noctalia msg screenshot-region"; }
+
+    XF86AudioRaiseVolume { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
+    XF86AudioLowerVolume { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
+
+    XF86AudioMute { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    Ctrl+Shift+M { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+
+    XF86AudioPlay { spawn-sh "playerctl play-pause"; }
+    XF86AudioStop { spawn-sh "playerctl stop"; }
+    XF86AudioPrev { spawn-sh "playerctl previous"; }
+    XF86AudioNext { spawn-sh "playerctl next"; }
+
+    Mod+O repeat=false { toggle-overview; }
+
+    Ctrl+Shift+Q repeat=false { close-window; }
+    Mod+Shift+E repeat=false { quit; }
+
+    Mod+H { focus-column-or-monitor-left; }
+    Mod+J { focus-window-or-workspace-down; }
+    Mod+K { focus-window-or-workspace-up; }
+    Mod+L { focus-column-or-monitor-right; }
+
+    Mod+Alt+M { focus-workspace 1; }
+    Mod+Alt+Comma { focus-workspace 2; }
+    Mod+Alt+Period { focus-workspace 3; }
+
+    Mod+Alt+F { fullscreen-window; }
+}

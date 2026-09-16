@@ -1,9 +1,0 @@
-defaults:
-  theme: terminal-dark
-
-options:
-  strict_front_matter_parsing: false
-  end_slide_shorthand: false
-
-speaker_notes:
-  always_publish: true
